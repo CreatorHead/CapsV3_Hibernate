@@ -18,4 +18,19 @@
 			<property name="hibernate.format_sql" value="true" />
 		</properties>
 	</persistence-unit>
+	
+	<persistence-unit name="mySQL2">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="root" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/capsv3_db" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
 </persistence>

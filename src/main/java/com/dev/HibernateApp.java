@@ -15,12 +15,20 @@ public class HibernateApp {
 		m.setRating(9);
 		m.setSummery("Action");
 		
-		EntityManagerFactory emf =
-				Persistence.createEntityManagerFactory("myPersistanceUnit");
+		EntityManagerFactory emf = JPAUtils.getEntityManagerFactory("myPersistanceUnit");
+		
+		EntityManagerFactory emf2 = JPAUtils.getEntityManagerFactory("mySQL2");
+		
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-		m = em.find(Movie.class, 1);
+//		m = em.find(Movie.class, 1);
+		m = em.getReference(Movie.class, 1);
+		System.out.println(1);
+		System.out.println(2);
+		System.out.println(3);
+		System.out.println(4);
+		System.out.println(5);
 		System.out.println(m);
 		tx.commit();
 	}

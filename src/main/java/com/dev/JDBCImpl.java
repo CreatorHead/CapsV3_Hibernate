@@ -60,6 +60,9 @@ public Movie getMovie(int id) {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/capsv3_db","root","root");
+			
+			System.out.println("Calss Name: "+con.getClass());
+			
 			String sql = "select * from movies_info where movie_id = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, id);
