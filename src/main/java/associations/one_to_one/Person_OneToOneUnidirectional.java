@@ -6,14 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-@Entity(name="person_one_to_one")
+@Entity
+@Table(name="person_one_to_one")
 public class Person_OneToOneUnidirectional {
 	
 	@Id
 	private int id;
 	
-	@Column
+	@Column 
 	private String name;
 	
 	@Column
